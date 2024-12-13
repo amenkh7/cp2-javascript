@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //part1
+    function reverseword(mot) {
+    return mot.split('').reverse().join('');
+}
+    function countcarac(mot) {
+        return mot.length;
+}
+    function capitalword(word) {
+        return word.split(' ').map(words => words.charAt(0).toUpperCase() + words.slice(1)).join(' ');
+}
+    //part2
+    function maxi(tab) {
+        return Math.max(...tab);
+}
+
+    function mini(tab) {
+        return Math.min(...tab);
+}
+    function sum(tab) {
+        return tab.reduce((sum, num) => sum + num, 0);
+}
+    function filterArray(tab,condition) {
+        return tab.filter(condition);
+}
+    //part3
+    function factorielle(n) {
+        if (n === 0 || n === 1) return 1;
+        return n * factorial(n - 1);
+}
+    function primaire(num) {
+        if (num <= 1) return false;
+        if (num === 2) return true;
+        if (num % 2 === 0) return false;
+        for (let i = 3; i * i <= num; i += 2) {
+            if (num % i === 0) return false;
+        }
+        return true;
+}
+    function generateFibonacci(n) {
+        let tab = [];
+        let a = 0, b = 1;
+        for (let i = 0; i < n; i++) {
+            tab.push(a);
+            [a, b] = [b, a + b];
+    }
+    return tab;
+}
+    </script>
+</body>
+</html>
